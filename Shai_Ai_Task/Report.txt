@@ -1,0 +1,31 @@
+Name : Ahmed Abdel hameed
+
+ I am writing to present the findings and insights from a recent data analysis task I completed. The 
+task involved exploring a dataset containing employee information, including various components of 
+pay and job details.
+The dataset comprises 148,654 entries, each representing an employee, across 13 columns. These 
+columns include 'Id', 'EmployeeName', 'JobTitle', 'BasePay', 'OvertimePay', 'OtherPay', 'Benefits', 
+'TotalPay', 'TotalPayBenefits', 'Year', 'Notes', 'Agency', and 'Status'.
+In this analysis, 'TotalPayBenefits' was used to represent the total salary of an employee, which 
+includes base pay, overtime pay, other pay, and benefits.
+Before diving into the analysis, I conducted a thorough data quality check. I found that several 
+columns contained null values and negative values. To address these issues, I cleaned the data by 
+setting negative values to 0, filling null values with 0, and dropping the 'Notes' and 'Status' columns. 
+Post-cleaning, I confirmed that all numeric columns were free of negative values and all columns 
+were free of null values.
+The analysis revealed several interesting patterns and correlations:
+1.	Salary Components: 'BasePay', 'OvertimePay', and 'OtherPay' showed a positive correlation 
+with the total salary, suggesting they are significant contributors to the total pay benefits.
+2.	Job Titles: The most common job titles were 'Transit Operator', 'Special Nurse', 'TRANSIT 
+OPERATOR', 'Registered Nurse', 'Firefighter', 'Police Officer 3', and 'Custodian'.
+3.	Salary Trends Over Time: The average, median, and standard deviation of total salary 
+grouped by 'Year' showed a general increase from 2011 to 2014.
+4.	Department-wise Salary: When grouped by 'Department', the 'Fire Department' had higher 
+average and median total salaries than the 'Police Department'.
+5.	Yearly Department-wise Salary: When grouped by both 'Department' and 'Year', the 'Fire 
+Department' saw a significant increase in average total salary from 2011 to 2014, while the 
+'Police Department' saw a more gradual increase.
+Conclusion : The insights derived from this analysis provide a comprehensive understanding of the 
+salary structure and trends within the organization. These findings can guide strategic decisions 
+related to compensation, budget allocation, and workforce planning.
+
