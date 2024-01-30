@@ -38,6 +38,7 @@ class DataCleaner:
         self.df.fillna(0, inplace=True)
         self.df = self.df.drop('Notes', axis=1)
         self.df = self.df.drop('Status', axis=1)
+        self.df = self.df.drop('EmployeeName',axis=1)
         return self.df
     def print_cleaned_data(self):
         self.print_separator()
