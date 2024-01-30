@@ -37,14 +37,9 @@ stats = DataStatistics(df)
 stats.show_stats()
 stats.modes(1)
 
-
-
 # Create an instance of DataVisualizer and call its methods
 visualizer = DataVisualizer(df,sub_df)
-visualizer.plot_salary_distribution()
-visualizer.plot_job_title_distribution()
-sub_df=visualizer.plot_department_distribution()
-
+sub_df=visualizer.visualizing()
 
 # Create an instance of DataAnalyzer and call its methods
 analyzer = DataAnalyzer(df, sub_df)
