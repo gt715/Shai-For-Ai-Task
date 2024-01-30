@@ -10,18 +10,23 @@ class DataVisualizer:
     def print_separator(self):
         print("#################################################\n")
 
-# Histogram shows the freq of the Salaries
 
-    def plot_salary_distribution(self):
-        h = plt.hist(self.df['TotalPayBenefits'], bins=11, edgecolor='black')
+    def visualizing (self) :
+
+        plt.figure()
+        plt.suptitle("Data_Visualing",fontsize= 20)
+        
+        
+
+    # Histogram shows the freq of the Salaries
+        plt.subplot(2,1,1)
+        plt.hist(self.df['TotalPayBenefits'], bins=11, edgecolor='black')
         plt.title('Salary Distribution')
         plt.xlabel('Salary')
         plt.ylabel('Frequency')
-        plt.show()
 
-# A piechart to show the percnetage of employees with the same job 
-
-    def plot_job_title_distribution(self):
+    # A piechart to show the percnetage of employees with the same job 
+        plt.subplot(2,2,3)
         self.print_separator()
         sample_df = self.df.sample(n=383)
         ss = sample_df['JobTitle'].value_counts()
@@ -29,11 +34,9 @@ class DataVisualizer:
         print(ss)
         P1 = plt.pie(ss, labels=ss.index, autopct='%1.1f%%')
         plt.title('Employees by Job_Title')
-        plt.show()
 
-# A piechart shows the percnetage of the employees under the same Department
-
-    def plot_department_distribution(self):
+    # A piechart shows the percnetage of the employees under the same Department
+        plt.subplot(2,2,4)
         self.print_separator()
         sd = self.sub_df['JobTitle'].value_counts()
         self.sub_df.loc[:, 'Department'] = np.where(self.sub_df['JobTitle'].str.contains('Fire Department', case=False), 'Fire Department',
@@ -43,6 +46,8 @@ class DataVisualizer:
         print(z)
         plt.pie(z, labels=z.index, autopct='%1.1f%%')
         plt.title('Employees by Departments')
+        
         plt.show()
+        
         sub_df=self.sub_df
         return sub_df  # Returns the updated subset dataframe
